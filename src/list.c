@@ -53,3 +53,13 @@ void	add_list(t_list *list, int value)
 		return (list);
 	}
 }
+
+void del_all_list(t_list *list)
+{
+	while (list->next != NULL)
+	{
+		list = list->next;
+		free(list);
+	}
+	free(list);
+}
