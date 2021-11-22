@@ -18,7 +18,6 @@ int	check_list(t_list *list)
 		return (OK);
 }
 
-
 t_list	*go_last_list(t_list *list)
 {
 	while (list->next != NULL)
