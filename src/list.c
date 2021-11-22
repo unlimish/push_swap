@@ -54,7 +54,7 @@ void	add_list(t_list *list, int value)
 	}
 }
 
-void del_all_list(t_list *list)
+void	del_all_list(t_list *list)
 {
 	while (list->next != NULL)
 	{
