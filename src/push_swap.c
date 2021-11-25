@@ -5,15 +5,27 @@
 
 int	main(int ac, char **av)
 {
-	int **a;
-	int **b;
+	t_dlist	*list;
+	int tmp_char_int;
+	int	i;
 
-	if (ac >= 2)
-		return (0);
-	av[0]="1";
-	check_is_int(ac, av);
-	while (*av != "\0")
+
+	i = 1;
+	tmp_char_int = -1;
+	// if (ac >= 2)
+	// 	return (0);
+	if (ac < 2)
+		return (-1);
+	// check_is_int(ac, av);
+	list = ft_list_malloc();
+	while (i < ac)
 	{
-
+		while (**av == ' ')
+			break;
+		// printf("%s\n", av[i]);
+		tmp_char_int = ft_atoi(av[i]);
+		ft_list_add(list, tmp_char_int);
+		i++;
 	}
+		ft_list_put(list);
 }
