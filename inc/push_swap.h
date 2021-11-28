@@ -6,5 +6,6 @@
 # define OK 0
 
 int			check_is_int(int ac, char **av);
+int			put_err(void);
 
 #endif

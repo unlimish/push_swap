@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include "push_swap.h"
+#include "libft.h"
 
 int check_is_int(int ac, char **av)
 {
@@ -22,4 +23,10 @@ int check_is_int(int ac, char **av)
 		i++;
 	}
 	return (0);
+}
+
+int	put_err(void)
+{
+	ft_putstr_fd("Error\n", STDERR_FILENO);
+	exit (ERR);
 }
