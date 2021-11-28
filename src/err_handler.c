@@ -25,8 +25,10 @@ int check_is_int(int ac, char **av)
 	return (0);
 }
 
-int	put_err(void)
+void	put_err(t_dlist *list_a, t_dlist *list_b)
 {
 	ft_putstr_fd("Error\n", STDERR_FILENO);
+	ft_list_del_all(list_a);
+	ft_list_del_all(list_b);
 	exit (ERR);
 }

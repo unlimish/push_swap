@@ -6,7 +6,7 @@
 int	main(int ac, char **av)
 {
 	t_dlist	*list_a;
-	// t_dlist	*list_b;
+	t_dlist	*list_b;
 	int tmp_char_int;
 	int	i;
 	int j;
@@ -19,7 +19,7 @@ int	main(int ac, char **av)
 	if (ac < 2)
 		return (-1);
 	list_a = ft_list_malloc();
-	// list_b = ft_list_malloc();
+	list_b = ft_list_malloc();
 	while (i < ac)
 	{
 		// printf("%s\n", av[i]);
@@ -27,7 +27,7 @@ int	main(int ac, char **av)
 		while (av[i][j] != '\0')
 		{
 			if (!(('0' <= av[i][j]) &&(av[i][j] <= '9')))
-				put_err();
+				put_err(list_a, list_b);
 			j++;
 		}
 		tmp_char_int = ft_atoi(av[i]);
@@ -36,4 +36,5 @@ int	main(int ac, char **av)
 	}
 		ft_list_put(list_a);
 		ft_list_del_all(list_a);
+		ft_list_del_all(list_b);
 }
