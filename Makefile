@@ -17,7 +17,8 @@ HEADER =	inc/push_swap.h
 all: $(NAME)
 
 
-$(NAME):$(LIB) $(SRCS)
+$(NAME):${LIB} ${SRCS}
+		cd $(LIB_DIR) && make
 		$(CC) -g $(INC) $(FLAGS) $(SRCS) $(LIB) -o $(NAME)
 
 $(LIB): $(LIB_DIR)
@@ -25,9 +26,11 @@ $(LIB): $(LIB_DIR)
 
 clean:
 		rm -rf $(OBJ)
+		cd $(LIB_DIR) && make clean
 
 fclean: clean
 		rm -rf $(NAME)
+		cd $(LIB_DIR) && make fclean
 
 re: fclean all
 
